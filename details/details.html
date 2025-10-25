@@ -1,0 +1,145 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Movies Bank </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="details.css">
+    <script src="details.js"> </script>
+</head>
+<body style="background-color: #1e1e1e;">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- start of page -->
+
+    <!-- start of navbar -->
+    <nav class="navbar sticky-top navbar-expand">
+      <a class="navbar-brand" href="#" id="navbarheader"> Movies Bank </a>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="../movies/movies.html"> Movies </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../shows/shows.html"> Shows </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../about/about.html"> About us </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- end of navbar -->
+
+    <!-- start of poster -->
+    <div id="poster">
+        
+       <h1 id="poster-text"> Land of Mine </h1>
+
+
+        <br>
+
+        <button class="button">
+          <svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="15px">
+            <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z" fill="currentColor"></path></svg>
+            Watch Now
+          <div class="arrow"> ›› </div>
+        </button>
+    </div>
+    <!-- end of poster -->
+
+    <!-- start of description -->
+    <div class="py-5 pe-5 reveal">
+      <h2> Overview </h2>
+      <br>
+      <h5 id="overview"> 
+        overview
+      </h5>
+    </div>
+    <!-- end of description -->
+
+    <!-- start of cast -->
+    <div class="py-5 pe-5">
+      <h2> Top Cast </h2>
+      <br>
+      <div class="scroll-wrapper reveal">
+        <!-- scroll left button -->
+        <div class="scroll-btn scroll-left" onclick="slideleft_cast()">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path fill="rgba(255,255,255,1)" d="M11.9997 10.8284L7.04996 15.7782L5.63574 14.364L11.9997 8L18.3637 14.364L16.9495 15.7782L11.9997 10.8284Z">
+            </path>
+          </svg>
+        </div>
+        <!-- end of scroll left button -->
+
+        <div class="casts-cards" id="casts-cards-id">
+
+        </div>
+
+        <!-- scroll rigt button -->
+        <div class="scroll-btn scroll-right" onclick="slideright_cast()">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path fill="rgba(255,255,255,1)" d="M11.9997 10.8284L7.04996 15.7782L5.63574 14.364L11.9997 8L18.3637 14.364L16.9495 15.7782L11.9997 10.8284Z">
+            </path>
+          </svg>
+        </div>
+        <!-- end of scroll right button -->
+      </div>
+    </div>
+    <!-- end of cast -->
+
+    <!-- start of crew -->
+    <div class="py-5 pe-5">
+      <h2> Crew </h2>
+      <br>
+      <div class="scroll-wrapper reveal">
+        <!-- scroll left button -->
+        <div class="scroll-btn scroll-left" onclick="slideleft_crew()">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path fill="rgba(255,255,255,1)" d="M11.9997 10.8284L7.04996 15.7782L5.63574 14.364L11.9997 8L18.3637 14.364L16.9495 15.7782L11.9997 10.8284Z">
+            </path>
+          </svg>
+        </div>
+        <!-- end of scroll left button -->
+
+        <div class="casts-cards" id="crew-cards-id">
+          
+        </div>
+
+        <!-- scroll rigt button -->
+        <div class="scroll-btn scroll-right" onclick="slideright_crew()">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path fill="rgba(255,255,255,1)" d="M11.9997 10.8284L7.04996 15.7782L5.63574 14.364L11.9997 8L18.3637 14.364L16.9495 15.7782L11.9997 10.8284Z">
+            </path>
+          </svg>
+        </div>
+        <!-- end of scroll right button -->
+      </div>
+    </div>
+    <!-- end of crew -->
+
+    <!-- start of description -->
+    <div class="py-5 pe-5 reveal" id="more-info">
+      <div class="info">
+        <h1> Rating </h1>
+        <h2 id="rate"> 0.0 </h2>
+      </div>
+      <div class="info">
+        <h1> Language </h1>
+        <h2 id="language"> EN </h2>
+      </div>
+    </div>
+    <!-- end of description -->
+
+    <br>
+    <br>
+
+    <script>
+      loadDetails();
+    </script>
+	
+</body>
+</html>

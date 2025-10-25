@@ -1,0 +1,260 @@
+h1, h2, h3, h4, h5, h6{
+  color: whitesmoke;
+  font-weight: 600;
+  margin-left: 30px;
+}
+
+#poster{
+  background-image: linear-gradient(rgba(0, 0, 0, 0), #1e1e1e), url('../images/poster-show.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 60%;
+  
+  display: flex;
+  flex-direction: column;;
+  justify-content: flex-end;
+}
+
+.navbar{
+  background-color: #1e1e1e;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+#navbarheader{
+  color: grey;
+  font-weight: 600;
+  margin-left: 15px;
+}
+
+.nav-link{
+  color: whitesmoke;
+  font-weight: 500;
+
+}
+
+.nav-link:hover{
+  color: grey;
+  font-weight: 600;
+}
+
+#poster-text{
+  width: 50%;
+  margin-bottom: 5px;
+  color: whitesmoke;
+}
+
+.scroll-wrapper{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.shows-cards{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 550px;
+  width: 90%;
+  margin-top: 30px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  color: whitesmoke;
+  font-weight: 600;
+}
+
+.show-card{
+  height: 450px;
+  min-width: 250px;
+  max-width: 250;
+  flex-shrink: unset;
+  margin-left: 11px;
+  margin-right: 11px;
+}
+
+.show-card:hover{
+  transform: scale(1.08);
+  box-shadow: #aca2a2 -5px 10px 10px 0px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.scroll-btns{
+  font-size: 25px;
+}
+
+.selected{
+  color: grey;
+  font-weight: 600;
+}
+
+.reveal{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 2s all ease;
+}
+.reveal.active{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+
+
+/* <reset-style> ============================ */
+a {
+  text-decoration: none;
+}
+/* <main-style> ============================ */
+.scroll-btn {
+  /* position: fixed; */
+  right: 3rem;
+  bottom: -50%;
+  z-index: 10;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  background-color: rgba(29, 29, 31, 0.7);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: bottom .4s, transform .4s;
+}
+
+.scroll-btn:hover {
+  transform: translateY(-.25rem);
+}
+
+/* Show scroll-right */
+._show-scroll {
+  bottom: 3rem;
+}
+
+@media (max-width: 1199.98px) {
+  .scroll-btn {
+      right: 1rem;
+  }
+}
+
+.scroll-left{
+  rotate: -90deg;
+}
+
+.scroll-right{
+  rotate: 90deg;
+}
+
+
+.button {
+  width: 150px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-center;
+  gap: 10px;
+  padding: 0px 15px;
+  background-color: #198754;
+  border-radius: 10px;
+  border: none;
+  color: whitesmoke;
+  position: relative;
+  cursor: pointer;
+  font-weight: 700;
+  transition-duration: .2s;
+  margin-left: 30px;
+}
+
+.game path {
+  color: whitesmoke;
+}
+
+.button .arrow {
+  position: absolute;
+  right: 0;
+  padding: 0px 5px;
+  width: 30px;
+  height: 100%;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow{
+  font-weight: bolder;
+}
+
+.button:hover,
+.button:focus {
+  background-color: black;
+  transition-duration: .2s;
+}
+
+.button:hover .arrow {
+  animation: slide-right .6s ease-out both;
+}
+/* arrow animation */
+@keyframes slide-right {
+  0% {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.button:active {
+  transform: translate(1px , 1px);
+  transition-duration: .2s;
+}
+
+.btn{  
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  -webkit-transition : all 200ms linear;
+  transition: all 200ms linear;
+  margin: 0 20px;
+  letter-spacing: 1px;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center;
+  text-align: center;
+  border: none;
+  background-color: #ffeba7;
+  color: #102770;
+  box-shadow: 0 8px 24px 0 rgba(255,235,167,.2);
+}
+.btn:active,
+.btn:focus{  
+  background-color: #102770;
+  color: #ffeba7;
+  box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
+}
+.btn:hover{  
+  background-color: #102770;
+  color: #ffeba7;
+  box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
+}

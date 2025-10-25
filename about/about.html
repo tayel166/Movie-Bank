@@ -1,0 +1,91 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Movies Bank </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="about.css">
+    <script src="about.js"> </script>
+</head>
+<body style="background-color: #1e1e1e;">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- start of page -->
+
+    <!-- start of navbar -->
+    <nav class="navbar navbar-inverse navbar-expand">
+        <a class="navbar-brand" href="#" id="navbarheader"> Movies Bank </a>
+
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="../movies/movies.php"> Movies </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../shows/shows.html"> Shows </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link selected" href="#"> About us </a>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link btn" onclick="signout()"> Log Out </button>
+              </li>
+        </ul>
+    </nav>
+    <!-- end of navbar -->
+
+    <!-- start of about -->
+    <div id="about-body">
+      <div class="py-5" style="width: 50%;">
+        <h1> About us </h1>
+        <br>
+        <br>
+        <h5> We are a group of students who are passionate about movies and shows. 
+          We created this website to help you find the best movies and shows to watch.
+        </h5>
+        <br>
+        <br>
+        <h5> we provide collection of new and popular shows an movies that suits various types of tasts. </h5>
+        <h5> Give it a try surely you will find something awesome :D </h5>
+        <br>
+        <br>
+        <h5> We hope you enjoy our website 😊. </h5>
+      </div>
+    </div>
+    <!-- end of about -->
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+        import { getFirestore, doc, updateDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+  
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyAiJqH3uIlh_6GkK_eemGTS0iwF6OZPkXo",
+          authDomain: "movie-bank-5e524.firebaseapp.com",
+          projectId: "movie-bank-5e524",
+          storageBucket: "movie-bank-5e524.appspot.com",
+          messagingSenderId: "167838756017",
+          appId: "1:167838756017:web:97a848394cd88bab138690"
+        };
+  
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth();
+        const db = getFirestore(app);
+  
+        function signout(){
+          let UID = getCookie("UID");
+          signOut(auth).then(async() => {
+            await updateDoc(doc(db, "users", UID), {
+                        isLogged: false,
+                    });
+            window.location.href = "../signout.php";
+          }).catch((error) => {
+            console.log(error);
+          });
+        }
+        window.signout = signout;
+      </script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+h1, h2, h3, h4, h5, h6{
+  color: whitesmoke;
+  font-weight: 600;
+  margin-left: 30px;
+}
+
+#poster{
+  background-image: linear-gradient(rgba(0, 0, 0, 0), #1e1e1e), ('../images/poster-movie.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.navbar{
+background-color: #1e1e1e;
+height: 60px;
+width: 100%;
+display: flex;
+flex-direction: row;
+}
+
+#navbarheader{
+  color: grey;
+  font-weight: 600;
+  margin-left: 15px;
+}
+
+.nav-link{
+  color: whitesmoke;
+  font-weight: 500;
+
+}
+
+.nav-link:hover{
+  color: grey;
+  font-weight: 600;
+}
+
+#poster-text{
+  width: 50%;
+  margin-bottom: 5px;
+  color: whitesmoke;
+}
+
+.reveal{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 2s all ease;
+}
+.reveal.active{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.scroll-wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.casts-cards{
+  display: flex;
+  flex-direction: row;
+  height: fit-content;
+  width: 90%;
+  overflow-x: hidden;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: whitesmoke;
+  font-weight: 600;
+}
+
+.cast-card{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: fit-content;
+  margin-right: 50px;
+  width: 30%;
+  min-width: 250px;
+  flex-shrink: unset;
+}
+
+.cast-name{
+  color: whitesmoke;
+  font-weight: 600;
+  margin-left: 15px;
+}
+
+.cast-img{
+  width: 100px;
+  height: 100px;
+  align-content: center;
+  object-fit: cover;
+  border-radius: 1000px;
+}
+
+.scroll-btns{
+  font-size: 25px;
+}
+
+#more-info{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 30;
+  color: whitesmoke;
+  font-weight: 600;
+}
+
+.info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: fit-content;
+  flex-shrink: unset;
+}
+
+
+
+
+/* <reset-style> ============================ */
+a {
+  text-decoration: none;
+}
+/* <main-style> ============================ */
+.scroll-btn {
+    /* position: fixed; */
+  right: 3rem;
+  bottom: -50%;
+  z-index: 10;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  background-color: rgba(29, 29, 31, 0.7);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: bottom .4s, transform .4s;
+}
+
+.scroll-btn:hover {
+  transform: translateY(-.25rem);
+}
+
+/* Show scroll-right */
+._show-scroll {
+  bottom: 3rem;
+}
+
+@media (max-width: 1199.98px) {
+  .scroll-btn {
+    right: 1rem;
+  }
+}
+
+.scroll-left{
+  rotate: -90deg;
+}
+
+.scroll-right{
+  rotate: 90deg;
+}
+
+
+
+.button {
+  width: 160px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-center;
+  gap: 10px;
+  padding: 0px 15px;
+  background-color: #198754;
+  border-radius: 10px;
+  border: none;
+  color: whitesmoke;
+  position: relative;
+  cursor: pointer;
+  font-weight: 700;
+  transition-duration: .2s;
+  margin-left: 30px;
+}
+
+.game path {
+  color: whitesmoke;
+}
+
+.button .arrow {
+  position: absolute;
+  right: 0;
+  padding: 0px 5px;
+  width: 30px;
+  height: 100%;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow{
+  font-weight: bolder;
+}
+
+.button:hover,
+.button:focus {
+  background-color: black;
+  transition-duration: .2s;
+}
+
+.button:hover .arrow {
+  animation: slide-right .6s ease-out both;
+}
+/* arrow animation */
+@keyframes slide-right {
+  0% {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.button:active {
+  transform: translate(1px , 1px);
+  transition-duration: .2s;
+}
